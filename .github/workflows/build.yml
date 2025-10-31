@@ -1,8 +1,24 @@
-name: Build and Push Docker Image
+name: Build a Docker Image
 
-# Trigger the workflow on push or pull request to the main branch
+# Decide the trigger when we push code to master branch
 
 on:
-   push:
+  push:
+    branches:
+      - main
+      - master
 
-# Jobs
+# Define the jobs
+jobs:
+   builds:
+      runs-on: ubuntu-latest
+
+      steps:
+         - name: Checkout repository
+           uses: actions/checkout@v2
+         
+         - name: Checkout repository
+           uses: docker/setup-buildx-action@v1
+           
+         - name: Checkout repository
+           run: docker build -t my-app-image ./my-app
