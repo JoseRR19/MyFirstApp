@@ -1,0 +1,8 @@
+name: Build and Push Docker Image
+
+# Trigger the workflow on push or pull request to the main branch
+
+on:
+   push:
+
+# Jobs
